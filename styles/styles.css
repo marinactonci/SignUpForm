@@ -1,0 +1,245 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --green: #596d48;
+  --light-gray: #f9fafb;
+  --border-gray: #e5e7eb;
+  --text-gray: #6b7280;
+  --error-red: #dc2626;
+}
+
+@font-face {
+  font-family: "Norse Bold";
+  src: url("/public/Norse-Bold.otf") format("opentype");
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Left side with background image */
+.left-side {
+  flex: 0 0 40%;
+  background-image: url("/public/background.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 1rem 0;
+  margin-top: 20vh;
+  gap: 1rem;
+}
+
+.logo {
+  height: 80px;
+  width: auto;
+}
+
+.logo-text {
+  font-family: "Norse Bold", serif;
+  font-size: 4rem;
+  color: white;
+  font-weight: bold;
+}
+
+.photo-credit {
+  align-self: center;
+  color: white;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.credit-link {
+  color: white;
+  text-decoration: underline;
+}
+
+/* Right side with form */
+.right-side {
+  flex: 1;
+  background-color: var(--light-gray);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.intro-text {
+  padding: 2rem 8rem 1rem 4rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.6;
+
+  p {
+    margin: 0 !important;
+  }
+}
+
+.intro-text p {
+  margin-bottom: 1rem;
+}
+
+.intro-text p:last-child {
+  margin-bottom: 0;
+}
+
+.form-container {
+  background-color: white;
+  padding: 2rem 12rem 2rem 4rem;
+  box-shadow: 0 0px 24px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #374151;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem 2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.25rem;
+  letter-spacing: 0.05em;
+}
+
+.input {
+  padding: 0.5rem;
+  border: 1px solid var(--border-gray);
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.input[type="password"]:invalid:not(:focus):not(:placeholder-shown) {
+  border-color: var(--error-red);
+}
+
+.error-message {
+  color: var(--error-red);
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  min-height: 1.25rem;
+}
+
+.button-section {
+  background-color: var(--light-gray);
+  padding: 2rem;
+  padding-left: 4rem;
+  padding-top: 0;
+}
+
+.btn {
+  padding: 0.75rem 3rem;
+  border-radius: 8px;
+  background-color: var(--green);
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  margin-bottom: 2rem;
+}
+
+.btn:hover {
+  background-color: #4a5d3a;
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.footer-text {
+  color: var(--text-gray);
+  font-size: 1rem;
+}
+
+.link {
+  color: var(--green);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .left-side {
+    flex: 0 0 30vh;
+  }
+
+  .logo-container {
+    margin-top: 10vh;
+  }
+
+  .logo {
+    height: 60px;
+  }
+
+  .logo-text {
+    font-size: 3rem;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .intro-text {
+    font-size: 1rem;
+  }
+}
