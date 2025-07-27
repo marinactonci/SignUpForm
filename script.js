@@ -23,30 +23,23 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Add event listeners for real-time validation
     passwordInput.addEventListener('input', validatePasswords);
     confirmPasswordInput.addEventListener('input', validatePasswords);
 
-    // Handle form submission
     form.addEventListener('submit', function(e) {
         e.preventDefault();
 
-        // Validate passwords one more time
         validatePasswords();
 
-        // Check if form is valid
         if (form.checkValidity()) {
-            // Here you would typically send the data to a server
             alert('Account created successfully! (This is just a demo)');
             form.reset();
             errorMessage.textContent = '';
         } else {
-            // Show validation errors
             form.reportValidity();
         }
     });
 
-    // Add focus/blur effects for better UX
     const inputs = document.querySelectorAll('.input');
     inputs.forEach(input => {
         input.addEventListener('focus', function() {
